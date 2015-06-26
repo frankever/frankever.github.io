@@ -5,28 +5,31 @@
   
   <title>GitHub和Hexo搭建博客 | Frank爪印</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一.准备工作1.安装node.js
-一.准备工作1.安装node.js(安装brew：)$ ruby -e &amp;quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)”
+  <meta name="description" content="一.准备工作1.安装node.js(安装brew：)$ ruby -e &amp;quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)”
 安装node.js$ brew install node
 
-2.安装Hexo$ npm install -g hexo$ hexo init my">
+2.安装Hexo$ npm install -g hexo
+$ hexo init myBlog
+$ npm instal">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GitHub和Hexo搭建博客">
 <meta property="og:url" content="/2015/06/23/GitHub和Hexo搭建博客/index.html">
 <meta property="og:site_name" content="Frank爪印">
-<meta property="og:description" content="一.准备工作1.安装node.js
-一.准备工作1.安装node.js(安装brew：)$ ruby -e &amp;quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)”
+<meta property="og:description" content="一.准备工作1.安装node.js(安装brew：)$ ruby -e &amp;quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)”
 安装node.js$ brew install node
 
-2.安装Hexo$ npm install -g hexo$ hexo init my">
-<meta property="og:updated_time" content="2015-06-23T10:36:44.000Z">
+2.安装Hexo$ npm install -g hexo
+$ hexo init myBlog
+$ npm instal">
+<meta property="og:updated_time" content="2015-06-26T15:08:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GitHub和Hexo搭建博客">
-<meta name="twitter:description" content="一.准备工作1.安装node.js
-一.准备工作1.安装node.js(安装brew：)$ ruby -e &amp;quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)”
+<meta name="twitter:description" content="一.准备工作1.安装node.js(安装brew：)$ ruby -e &amp;quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)”
 安装node.js$ brew install node
 
-2.安装Hexo$ npm install -g hexo$ hexo init my">
+2.安装Hexo$ npm install -g hexo
+$ hexo init myBlog
+$ npm instal">
   
     <link rel="alternative" href="/atom.xml" title="Frank爪印" type="application/atom+xml">
   
@@ -211,12 +214,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="一-准备工作">一.准备工作</h3><h4 id="1-安装node-js">1.安装node.js</h4><hr>
-<h3 id="一-准备工作-1">一.准备工作</h3><h4 id="1-安装node-js-1">1.安装node.js</h4><h5 id="(安装brew：)">(安装brew：)</h5><p><code>$ ruby -e &quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)”</code></p>
+        <h3 id="一-准备工作">一.准备工作</h3><h4 id="1-安装node-js">1.安装node.js</h4><h5 id="(安装brew：)">(安装brew：)</h5><p><code>$ ruby -e &quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)”</code></p>
 <h5 id="安装node-js">安装node.js</h5><p><code>$ brew install node</code></p>
 <hr>
-<h4 id="2-安装Hexo">2.安装Hexo</h4><p><code>$ npm install -g hexo</code></p><p><br><code>$ hexo init myBlog</code></p><p><br><code>$ npm install</code></p><p></p>
-<h6 id="我在执行$_npm_install的时候出现了这个错误：">我在执行<code>$ npm install</code>的时候出现了这个错误：</h6><pre><code>npm <span class="keyword">ERR</span>! install Couldn't <span class="keyword">read</span> dependencies
+<h4 id="2-安装Hexo">2.安装Hexo</h4><pre><code><span class="variable">$ </span>npm install -g hexo
+<span class="variable">$ </span>hexo init myBlog
+<span class="variable">$ </span>npm install
+</code></pre><h6 id="我在执行$_npm_install的时候出现了这个错误：">我在执行<code>$ npm install</code>的时候出现了这个错误：</h6><pre><code>npm <span class="keyword">ERR</span>! install Couldn't <span class="keyword">read</span> dependencies
 npm <span class="keyword">ERR</span>! Darwin 14.1.0
 npm <span class="keyword">ERR</span>! argv <span class="string">"node"</span> <span class="string">"/usr/local/bin/npm"</span> <span class="string">"install"</span>
 npm <span class="keyword">ERR</span>! node v0.12.4
@@ -240,8 +244,9 @@ Global Options:
   <span class="comment">--silent  Hide output on console</span>
 For more help, you can use <span class="string">'hexo help [command]'</span> <span class="keyword">for</span> <span class="operator">the</span> <span class="keyword">detailed</span> information
 <span class="operator">or</span> you can check <span class="operator">the</span> docs: <span class="keyword">http</span>://hexo.io/docs/
-</code></pre><h5 id="解决：重新回到myBlog目录下执行$_npm_install">解决：重新回到myBlog目录下执行<code>$ npm install</code></h5><h3 id="二-配置">二.配置</h3><p><code>$ cd myblog</code></p><p><br><code>$ vim  _config.yml</code></p>
-<h5 id="结尾处做如下修改：">结尾处做如下修改：</h5><pre><code># Deployment
+</code></pre><h5 id="解决：重新回到myBlog目录下执行$_npm_install">解决：重新回到myBlog目录下执行<code>$ npm install</code></h5><h3 id="二-配置">二.配置</h3><pre><code><span class="variable">$ </span>cd myblog
+<span class="variable">$ </span>vim  <span class="constant">_config.</span>yml
+</code></pre><h5 id="结尾处做如下修改：">结尾处做如下修改：</h5><pre><code># Deployment
 #<span class="string">Docs:</span> <span class="string">http:</span><span class="comment">//hexo.io/docs/deployment.html</span>
 <span class="string">deploy:</span>
 <span class="label"> type:</span> git
@@ -268,9 +273,9 @@ For more help, you can use <span class="string">'hexo help [command]'</span> <sp
 <span class="string">permalink:</span> :year<span class="regexp">/:month/</span>:day<span class="regexp">/:title/</span>
 <span class="string">permalink_defaults:</span>
 </code></pre><h5 id="如果以上修改都做好了，我们不妨预览一下：">如果以上修改都做好了，我们不妨预览一下：</h5><p><code>$ hexo g</code></p><p><br><code>$ hexo s</code></p>
-<h5 id="打开http:\\localhost:4000看看有没有出现博客的页面-">打开<code>http:\\localhost:4000</code>看看有没有出现博客的页面.</h5><hr>
+<h5 id="打开http://localhost:4000看看有没有出现博客的页面-">打开<code>http://localhost:4000</code>看看有没有出现博客的页面.</h5><hr>
 <h3 id="三-发布到github上">三.发布到github上</h3><h4 id="1-首先去注册一个github账户，然后创建一个仓库new_repository-比如说我的账户是frankever，我创建一个名为frankever-github-io的仓库，大家改一下username就好了，别的都是一样的-">1.首先去注册一个github账户，然后创建一个仓库new repository.比如说我的账户是frankever，我创建一个名为frankever.github.io的仓库，大家改一下username就好了，别的都是一样的.</h4><p><code>$ hexo d</code></p><p></p>
-<h5 id="将博客项目上穿到仓库里面">将博客项目上穿到仓库里面</h5><h4 id="至于说换theme，我用的theme链接留在这里，方便以后学习，里面介绍很详细。">至于说换theme，我用的theme链接留在这里，方便以后学习，里面介绍很详细。</h4><h4 id="yilia"><a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">yilia</a></h4><h6 id="明天要考试，一天的工作也到此为止了。😁">明天要考试，一天的工作也到此为止了。😁</h6>
+<h5 id="将博客项目上穿到仓库里面">将博客项目上穿到仓库里面</h5><h4 id="至于说换theme，我用的theme链接留在这里，方便以后学习，里面介绍很详细。">至于说换theme，我用的theme链接留在这里，方便以后学习，里面介绍很详细。</h4><h4 id="yilia"><a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">yilia</a></h4>
       
     </div>
     
