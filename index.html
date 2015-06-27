@@ -103,7 +103,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Github-hexo-博客-mac/" style="font-size: 10px;">Github hexo 博客 mac</a>
+						<a href="/tags/Github-hexo-博客-mac/" style="font-size: 10px;">Github hexo 博客 mac</a> <a href="/tags/django-mac/" style="font-size: 10px;">django mac</a>
 					</div>
 				</section>
 				
@@ -163,11 +163,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-django简介和开发环境配置" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-django简介和Mac下环境配置" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/06/27/django简介和开发环境配置/" class="article-date">
-  	<time datetime="2015-06-27T14:00:39.000Z" itemprop="datePublished">2015-06-27</time>
+      <a href="/2015/06/27/django简介和Mac下环境配置/" class="article-date">
+  	<time datetime="2015-06-27T14:02:51.000Z" itemprop="datePublished">2015-06-27</time>
 </a>
     </div>
   
@@ -176,10 +176,20 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/06/27/django简介和Mac下环境配置/">django简介和Mac下环境配置</a>
+    </h1>
+  
+
+      </header>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>title: Django简介和开发环境配置<br>date: 2015-06-27 21:59:57</p>
-<h2 id="tags:_Python_Django">tags: Python Django</h2><h2 id="Django">Django</h2><h4 id="Django简介">Django简介</h4><h5 id="Django是python的web开发框架，是目前python_web框架中功能最全面，文档最完整的一个。Django的理念是DRY(Don’t_Repeat_Yourself)来鼓励快速开发！目前想自己着手做一个ios_app，身边没有朋友能写服务器端程序，自己决定快速学习一下python和django这套框架。">Django是python的web开发框架，是目前python web框架中功能最全面，文档最完整的一个。Django的理念是DRY(Don’t Repeat Yourself)来鼓励快速开发！目前想自己着手做一个ios app，身边没有朋友能写服务器端程序，自己决定快速学习一下python和django这套框架。</h5><h5 id="框架结构">框架结构</h5><h5 id="urls-py">urls.py</h5><h6 id="网址入口，关联到对应的views-py中的一个函数（或者generic类），访问网址就对应一个函数。">网址入口，关联到对应的views.py中的一个函数（或者generic类），访问网址就对应一个函数。</h6><h5 id="views-py">views.py</h5><h6 id="处理用户发出的请求，从urls-py中对应过来,_通过渲染templates中的网页可以将显示内容，比如登陆后的用户名，用户请求的数据，输出到网页。">处理用户发出的请求，从urls.py中对应过来, 通过渲染templates中的网页可以将显示内容，比如登陆后的用户名，用户请求的数据，输出到网页。</h6><h5 id="models-py">models.py</h5><h6 id="与数据库操作相关，存入或读取数据时用到这个，当然用不到数据库的时候_你可以不使用。">与数据库操作相关，存入或读取数据时用到这个，当然用不到数据库的时候 你可以不使用。</h6><h5 id="forms-py">forms.py</h5><h6 id="表单，用户在浏览器上输入数据提交，对数据的验证工作以及输入框的生成等工作，当然你也可以不使用。">表单，用户在浏览器上输入数据提交，对数据的验证工作以及输入框的生成等工作，当然你也可以不使用。</h6><h6 id="templates_文件夹">templates 文件夹</h6><h6 id="views-py_中的函数渲染templates中的Html模板，得到动态内容的网页，当然可以用缓存来提高速度。">views.py 中的函数渲染templates中的Html模板，得到动态内容的网页，当然可以用缓存来提高速度。</h6><h5 id="admin-py">admin.py</h5><h6 id="后台，可以用很少量的代码就拥有一个强大的后台。">后台，可以用很少量的代码就拥有一个强大的后台。</h6><h5 id="settings-py">settings.py</h5><h6 id="Django_的设置，配置文件，比如_DEBUG_的开关，静态文件的位置等。">Django 的设置，配置文件，比如 DEBUG 的开关，静态文件的位置等。</h6><h4 id="环境配置">环境配置</h4><h5 id="下载安装好python和pip，这个我之前已经安装好了。">下载安装好python和pip，这个我之前已经安装好了。</h5><pre><code>$ sudo pip install django
+        <h2 id="Django">Django</h2><h4 id="Django简介">Django简介</h4><h5 id="Django是python的web开发框架，是目前python_web框架中功能最全面，文档最完整的一个。Django的理念是DRY(Don’t_Repeat_Yourself)来鼓励快速开发！目前想自己着手做一个ios_app，身边没有朋友能写服务器端程序，自己决定快速学习一下python和django这套框架。">Django是python的web开发框架，是目前python web框架中功能最全面，文档最完整的一个。Django的理念是DRY(Don’t Repeat Yourself)来鼓励快速开发！目前想自己着手做一个ios app，身边没有朋友能写服务器端程序，自己决定快速学习一下python和django这套框架。</h5><h5 id="框架结构">框架结构</h5><h5 id="urls-py">urls.py</h5><h6 id="网址入口，关联到对应的views-py中的一个函数（或者generic类），访问网址就对应一个函数。">网址入口，关联到对应的views.py中的一个函数（或者generic类），访问网址就对应一个函数。</h6><h5 id="views-py">views.py</h5><h6 id="处理用户发出的请求，从urls-py中对应过来,_通过渲染templates中的网页可以将显示内容，比如登陆后的用户名，用户请求的数据，输出到网页。">处理用户发出的请求，从urls.py中对应过来, 通过渲染templates中的网页可以将显示内容，比如登陆后的用户名，用户请求的数据，输出到网页。</h6><h5 id="models-py">models.py</h5><h6 id="与数据库操作相关，存入或读取数据时用到这个，当然用不到数据库的时候_你可以不使用。">与数据库操作相关，存入或读取数据时用到这个，当然用不到数据库的时候 你可以不使用。</h6><h5 id="forms-py">forms.py</h5><h6 id="表单，用户在浏览器上输入数据提交，对数据的验证工作以及输入框的生成等工作，当然你也可以不使用。">表单，用户在浏览器上输入数据提交，对数据的验证工作以及输入框的生成等工作，当然你也可以不使用。</h6><h6 id="templates_文件夹">templates 文件夹</h6><h6 id="views-py_中的函数渲染templates中的Html模板，得到动态内容的网页，当然可以用缓存来提高速度。">views.py 中的函数渲染templates中的Html模板，得到动态内容的网页，当然可以用缓存来提高速度。</h6><h5 id="admin-py">admin.py</h5><h6 id="后台，可以用很少量的代码就拥有一个强大的后台。">后台，可以用很少量的代码就拥有一个强大的后台。</h6><h5 id="settings-py">settings.py</h5><h6 id="Django_的设置，配置文件，比如_DEBUG_的开关，静态文件的位置等。">Django 的设置，配置文件，比如 DEBUG 的开关，静态文件的位置等。</h6><h4 id="环境配置">环境配置</h4><h5 id="下载安装好python和pip，这个我之前已经安装好了。">下载安装好python和pip，这个我之前已经安装好了。</h5><pre><code>$ sudo pip install django
 Collecting django
 <span class="regexp">/Library/</span>Python<span class="regexp">/2.7/</span>site-packages<span class="regexp">/pip/</span>_vendor<span class="regexp">/requests/</span>packages<span class="regexp">/urllib3/</span>util<span class="regexp">/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https:/</span><span class="regexp">/urllib3.readthedocs.org/</span>en<span class="regexp">/latest/</span>security.html#insecureplatformwarning.
   InsecurePlatformWarning
@@ -210,6 +220,10 @@ python manage<span class="class">.py</span> migrate
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django-mac/">django mac</a></li></ul>
+	</div>
+
       
 
       
