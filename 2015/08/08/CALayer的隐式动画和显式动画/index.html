@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>CALayer的隐式动画和显式动画 | Frank爪印</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="任何对于CALayer属性的修改,都是隐式事务，都会有动画效果.这样的事务会在run-loop中被提交.
+-(void)viewDidLoad {
+    //初始化一个layer,添加到主视图
+    layer=[CALayer layer];
+    layer.bounds = CGRectMake(0, 0, 200, 200);
+    layer.position = CGPoint">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CALayer的隐式动画和显式动画">
+<meta property="og:url" content="/2015/08/08/CALayer的隐式动画和显式动画/index.html">
+<meta property="og:site_name" content="Frank爪印">
+<meta property="og:description" content="任何对于CALayer属性的修改,都是隐式事务，都会有动画效果.这样的事务会在run-loop中被提交.
+-(void)viewDidLoad {
+    //初始化一个layer,添加到主视图
+    layer=[CALayer layer];
+    layer.bounds = CGRectMake(0, 0, 200, 200);
+    layer.position = CGPoint">
+<meta property="og:updated_time" content="2015-08-08T07:15:31.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CALayer的隐式动画和显式动画">
+<meta name="twitter:description" content="任何对于CALayer属性的修改,都是隐式事务，都会有动画效果.这样的事务会在run-loop中被提交.
+-(void)viewDidLoad {
+    //初始化一个layer,添加到主视图
+    layer=[CALayer layer];
+    layer.bounds = CGRectMake(0, 0, 200, 200);
+    layer.position = CGPoint">
+  
+    <link rel="alternative" href="/atom.xml" title="Frank爪印" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/icon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/paulfrank.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Frank Woo.</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">Paradise of fantasy.</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="http://github.com/frankever" title="github">github</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Github-hexo-博客-mac/" style="font-size: 10px;">Github hexo 博客 mac</a> <a href="/tags/django-mac/" style="font-size: 10px;">django mac</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">loving what I am doing...</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Frank Woo.</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/paulfrank.png" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Frank Woo.</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Paradise of fantasy.</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="http://github.com/frankever" title="github">github</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-CALayer的隐式动画和显式动画" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/08/CALayer的隐式动画和显式动画/" class="article-date">
+  	<time datetime="2015-08-08T07:04:12.000Z" itemprop="datePublished">2015-08-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CALayer的隐式动画和显式动画
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong><em>任何对于CALayer属性的修改,都是隐式事务，都会有动画效果.这样的事务会在run-loop中被提交.</em></strong></p>
+<pre><code>-(<span class="keyword">void</span>)viewDidLoad {
+    <span class="comment">//初始化一个layer,添加到主视图</span>
+    layer=[<span class="built_in">CALayer</span> layer];
+    layer<span class="variable">.bounds</span> = <span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">200</span>, <span class="number">200</span>);
+    layer<span class="variable">.position</span> = <span class="built_in">CGPointMake</span>(<span class="number">160</span>, <span class="number">250</span>);
+    layer<span class="variable">.backgroundColor</span> = [<span class="built_in">UIColor</span> redColor]<span class="variable">.CGColor</span>;
+    layer<span class="variable">.borderColor</span> = [<span class="built_in">UIColor</span> blackColor]<span class="variable">.CGColor</span>;
+    layer<span class="variable">.opacity</span> = <span class="number">1.0</span>f;
+    [<span class="keyword">self</span><span class="variable">.view</span><span class="variable">.layer</span> addSublayer:layer];    
+    [<span class="keyword">super</span> viewDidLoad];
+}
+ -(<span class="keyword">IBAction</span>)changeLayerProperty {
+ <span class="comment">//设置变化动画过程是否显示，默认为YES不显示</span>
+ [<span class="built_in">CATransaction</span> setDisableActions:<span class="literal">NO</span>]; 
+ <span class="comment">//设置圆角</span>
+ layer<span class="variable">.cornerRadius</span> = (layer<span class="variable">.cornerRadius</span> == <span class="number">0.0</span>f) ? <span class="number">30.0</span>f : <span class="number">0.0</span>f;    
+ <span class="comment">//设置透明度  </span>
+ layer<span class="variable">.opacity</span> = (layer<span class="variable">.opacity</span> == <span class="number">1.0</span>f) ? <span class="number">0.5</span>f : <span class="number">1.0</span>f;   
+</code></pre><p><strong><em>显式事务，通过明确的调用begin,commit来提交动画</em></strong></p>
+<pre><code>[<span class="built_in">CATransaction</span> begin]; 
+
+<span class="comment">//显式事务默认开启动画效果,kCFBooleanTrue-关闭</span>
+[<span class="built_in">CATransaction</span> setValue:(<span class="keyword">id</span>)k<span class="built_in">CFBooleanFalse</span>  forKey:k<span class="built_in">CATransactionDisableActions</span>];   
+<span class="comment">//动画执行时间</span>
+[<span class="built_in">CATransaction</span> setValue:[<span class="built_in">NSNumber</span> numberWithFloat:<span class="number">5.0</span>f] forKey:k<span class="built_in">CATransactionAnimationDuration</span>]; 
+<span class="comment">//[CATransaction setAnimationDuration:[NSNumber numberWithFloat:5.0f]];    </span>
+<span class="comment">//圆角</span>
+layer<span class="variable">.cornerRadius</span> = (layer<span class="variable">.cornerRadius</span> == <span class="number">0.0</span>f) ? <span class="number">30.0</span>f : <span class="number">0.0</span>f;
+<span class="comment">//透明度</span>
+layer<span class="variable">.opacity</span> = (layer<span class="variable">.opacity</span> == <span class="number">1.0</span>f) ? <span class="number">0.5</span>f : <span class="number">1.0</span>f;   
+<span class="comment">//提交 动画执行 </span>
+[<span class="built_in">CATransaction</span> commit];
+</code></pre>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/07/11/如何成为一名优秀的iOS开发工程师-转载/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">如何成为一名优秀的iOS开发工程师(转载)</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="CALayer的隐式动画和显式动画" data-title="CALayer的隐式动画和显式动画" data-url="/2015/08/08/CALayer的隐式动画和显式动画/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Frank Woo.
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

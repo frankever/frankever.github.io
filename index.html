@@ -163,6 +163,89 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-CALayer的隐式动画和显式动画" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/08/CALayer的隐式动画和显式动画/" class="article-date">
+  	<time datetime="2015-08-08T07:04:12.000Z" itemprop="datePublished">2015-08-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/08/CALayer的隐式动画和显式动画/">CALayer的隐式动画和显式动画</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong><em>任何对于CALayer属性的修改,都是隐式事务，都会有动画效果.这样的事务会在run-loop中被提交.</em></strong></p>
+<pre><code>-(<span class="keyword">void</span>)viewDidLoad {
+    <span class="comment">//初始化一个layer,添加到主视图</span>
+    layer=[<span class="built_in">CALayer</span> layer];
+    layer<span class="variable">.bounds</span> = <span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">200</span>, <span class="number">200</span>);
+    layer<span class="variable">.position</span> = <span class="built_in">CGPointMake</span>(<span class="number">160</span>, <span class="number">250</span>);
+    layer<span class="variable">.backgroundColor</span> = [<span class="built_in">UIColor</span> redColor]<span class="variable">.CGColor</span>;
+    layer<span class="variable">.borderColor</span> = [<span class="built_in">UIColor</span> blackColor]<span class="variable">.CGColor</span>;
+    layer<span class="variable">.opacity</span> = <span class="number">1.0</span>f;
+    [<span class="keyword">self</span><span class="variable">.view</span><span class="variable">.layer</span> addSublayer:layer];    
+    [<span class="keyword">super</span> viewDidLoad];
+}
+ -(<span class="keyword">IBAction</span>)changeLayerProperty {
+ <span class="comment">//设置变化动画过程是否显示，默认为YES不显示</span>
+ [<span class="built_in">CATransaction</span> setDisableActions:<span class="literal">NO</span>]; 
+ <span class="comment">//设置圆角</span>
+ layer<span class="variable">.cornerRadius</span> = (layer<span class="variable">.cornerRadius</span> == <span class="number">0.0</span>f) ? <span class="number">30.0</span>f : <span class="number">0.0</span>f;    
+ <span class="comment">//设置透明度  </span>
+ layer<span class="variable">.opacity</span> = (layer<span class="variable">.opacity</span> == <span class="number">1.0</span>f) ? <span class="number">0.5</span>f : <span class="number">1.0</span>f;   
+</code></pre><p><strong><em>显式事务，通过明确的调用begin,commit来提交动画</em></strong></p>
+<pre><code>[<span class="built_in">CATransaction</span> begin]; 
+
+<span class="comment">//显式事务默认开启动画效果,kCFBooleanTrue-关闭</span>
+[<span class="built_in">CATransaction</span> setValue:(<span class="keyword">id</span>)k<span class="built_in">CFBooleanFalse</span>  forKey:k<span class="built_in">CATransactionDisableActions</span>];   
+<span class="comment">//动画执行时间</span>
+[<span class="built_in">CATransaction</span> setValue:[<span class="built_in">NSNumber</span> numberWithFloat:<span class="number">5.0</span>f] forKey:k<span class="built_in">CATransactionAnimationDuration</span>]; 
+<span class="comment">//[CATransaction setAnimationDuration:[NSNumber numberWithFloat:5.0f]];    </span>
+<span class="comment">//圆角</span>
+layer<span class="variable">.cornerRadius</span> = (layer<span class="variable">.cornerRadius</span> == <span class="number">0.0</span>f) ? <span class="number">30.0</span>f : <span class="number">0.0</span>f;
+<span class="comment">//透明度</span>
+layer<span class="variable">.opacity</span> = (layer<span class="variable">.opacity</span> == <span class="number">1.0</span>f) ? <span class="number">0.5</span>f : <span class="number">1.0</span>f;   
+<span class="comment">//提交 动画执行 </span>
+[<span class="built_in">CATransaction</span> commit];
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-如何成为一名优秀的iOS开发工程师-转载" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
